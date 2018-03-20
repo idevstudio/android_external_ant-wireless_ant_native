@@ -29,6 +29,11 @@ LOCAL_C_INCLUDES := \
    $(BDROID_DIR)/hci/include \
    $(QCOM_DIR)/include
 
+ifneq ($(filter msm8994 msm8992,$(TARGET_BOARD_PLATFORM)),)
+LOCAL_C_INCLUDES += \
+   $(QCOM_DIR)/../msm8992/libbt-vendor/include
+endif
+
 
 ifeq ($(BOARD_ANT_WIRELESS_DEVICE),"qualcomm-uart")
 LOCAL_C_INCLUDES += \
